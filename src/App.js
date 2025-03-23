@@ -1,13 +1,13 @@
-import NavBar from './NavBar';
+import NavBar from './utilities/NavBar';
 import './App.css';
-import SouthImage from './SouthImage';
+
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
     <div className='block'>
       <NavBar />
-      <SouthImage />
-
+      <Outlet />
     </div>
   );
 }
