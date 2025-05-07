@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
-    <div className='block'>
+    <div className='block' class="font-grotesk">
       <NavBar />
       <Outlet />
     </div>

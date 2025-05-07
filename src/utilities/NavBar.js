@@ -3,8 +3,11 @@ import logo from '../img/logo-nobg-circle.png'
 
 const NavBar = () => {
     return (
-      <div className="flex justify-center items-center sticky rounded top-0 w-screen m-0 bg-green-400">
-        <img className="h-8 md:h-10 lg:h-12 m-1" src={logo} alt="sjp logo with white background"/>
+      <div className="flex justify-center items-center sticky
+      rounded-b-lg m-0
+      top-0 w-screen h-20 md:h-20 lg:h-24
+      bg-green-400">
+        <img className="h-10 md:h-12 lg:h-14 m-2" src={logo} alt="sjp logo with white background"/>
         <NavBarText text={"About Us"} route={"/about_us"}/>
         <NavBarText text={"Principles and Goals"} route={"principles_and_goals"}/>
         <NavBarText text={"SJP on Campus"} route={"sjp_on_campus"}/>
@@ -15,9 +18,15 @@ const NavBar = () => {
   };
 
 const NavBarText = ({ text, route }) => (
-  <Link to={route}>
-    <div className="font-semibold text-sm rounded m-1 bg-green-500 hover:bg-green-600">
-      <div className="m-1">{text}</div>
+  <Link to={route} className="flex h-full items-center">
+    <div className="flex items-center
+    rounded m-1 px-2
+    h-3/4
+    bg-green-500 hover:bg-green-600
+    ">
+      <div className="text-sm sm:text-base md:text-lg">
+        {text}
+      </div>
     </div>
   </Link>
 );

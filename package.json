@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "eslint": "^8.57.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1",
@@ -18,10 +19,11 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "lint": "npx eslint ."
+    "lint": "npx eslint .",
+    "fetch-site-content": "node scripts/fetchSiteText.mjs"
   },
   "eslintConfig": {
-    "extends": [
+   "extends": [
       "react-app",
       "react-app/jest"
     ]
@@ -40,10 +42,10 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.8",
-    "eslint": "^9.23.0",
-    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react": "^7.37.5",
     "postcss": "^7.0.39",
     "prettier": "^3.5.3",
+    "puppeteer": "^24.4.0",
     "react-router-dom": "^7.4.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
