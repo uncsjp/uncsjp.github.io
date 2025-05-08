@@ -23,7 +23,7 @@
     "fetch-site-content": "node scripts/fetchSiteText.mjs"
   },
   "eslintConfig": {
-   "extends": [
+    "extends": [
       "react-app",
       "react-app/jest"
     ]
@@ -42,6 +42,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.8",
+    "axios": "^1.9.0",
+    "crypto-browserify": "^3.12.1",
     "eslint-plugin-react": "^7.37.5",
     "postcss": "^7.0.39",
     "prettier": "^3.5.3",
