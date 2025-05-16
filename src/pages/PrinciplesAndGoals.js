@@ -1,34 +1,18 @@
-import TextBox from "../utilities/TextBox";
 import Image from "../utilities/Image";
-import { useEffect, useState } from "react";
+import TextBox from "../utilities/TextBox";
+import useLocalText from "../hooks/useLocalText";
+import { useState } from "react";
 
 const PrinciplesAndGoals = () => {
     const [text_boxes, set_text]  = useState(
         <TextBox text={"Loading..."} header={"Loading..."} className="animate-pulse" />
-    );
+   );
 
-    // TODO: Refactor to custom hook
-    useEffect(() => {
-        fetch('text/text.json')
-            .then(response => response.json()) // Convert body to json
-            .then(response => response.principles_and_goals) // Pull out principles_and_goals
-            .then(section => { // Reformat json as textboxes
-                let o = []
-                for (let tb in section) {
-                    o.push(<TextBox key={section[tb].id} header={section[tb].header} text={section[tb].text} />)
-                }
-                return o
-            })
-            .then(jsx => { // Set content
-                set_text(jsx);
-            })
-            .catch((e => console.error(e)));
-        return () => {}
-    }, [])
+    useLocalText({section: "principles_and_goals", setter: set_text});
 
     return (
         <div className="
-            flex flex-col
+            flex flex-col md:flex-row
             w-full
             justify-center
         ">
