@@ -1,8 +1,6 @@
 {
-    "about_us": [
-
-    ],
-    "principles_and_goals":[
+    "about_us": [],
+    "principles_and_goals": [
         {
             "id": 0,
             "header": "We affirm the right of Palestinians to resist, the right of Palestinian self-determination in Palestine, Al-Quds (Jerusalem) as the capital of Palestine, and the right of return for all Palestinian refugees.",
@@ -29,7 +27,5 @@
             "text": ""
         }
     ],
-    "sjp_on_campus":[
-
-    ]
+    "sjp_on_campus": []
 }

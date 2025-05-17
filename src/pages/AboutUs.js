@@ -3,11 +3,11 @@ import TextBoxt from '../utilities/TextBox'
 
 const AboutUs = () => {
     return (
-      <div>
-        <SouthImage />
-        <TextBoxt header={"تشابل هيل لتحرير فلسطين"}/>
-      </div>
-    );
-};
+        <div>
+            <SouthImage />
+            <TextBoxt header={'تشابل هيل لتحرير فلسطين'} />
+        </div>
+    )
+}
 
-export default AboutUs;
+export default AboutUs

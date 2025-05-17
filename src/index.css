@@ -1,12 +1,12 @@
 @import 'tailwindcss';
 
 @font-face {
-  font-family: "Grotesk";
-  src:
-    local("AktivGrotesk"),
-    url("./font/AktivGrotesk-Medium.otf") format("opentype");
+    font-family: 'Grotesk';
+    src:
+        local('AktivGrotesk'),
+        url('./font/AktivGrotesk-Medium.otf') format('opentype');
 }
 
 .font-grotesk {
-  font-family: "Grotesk", sans-serif;
+    font-family: 'Grotesk', sans-serif;
 }
