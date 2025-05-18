@@ -1,22 +1,23 @@
+import Container from '../utilities/Container'
 import TextBox from '../utilities/TextBox'
 
 const JoinTheOrg = () => {
     return (
-        <div>
-            <TextBox
-                header={'Interested in signing up for updates?'}
-                text={'Click here!'}
-            />
-            <TextBox
-                header={'Interested in organizing with SJP?'}
-                text={'Click here!'}
-            />
-            <TextBox
-                header={
-                    'Interested in organizational partnership with SJP? (For community, political and student orgs)'
-                }
-                text={'Click here!'}
-            />
+        <div className="flex flex-col md:flex-row w-full justify-center">
+            <div className="contents md:flex md:flex-col">
+                <TextBox
+                    header={"Join SJP!"}
+                />
+                {/* Interest Form */}
+                {/* Newsletter */}
+                {/* Coalition */}
+            </div>
+            <div className="contents md:flex md:flex-col">
+                <TextBox header={"Join other local orgs!"} />
+                <Container>
+                    <p>hello</p>
+                </Container>
+            </div>
         </div>
     )
 }
