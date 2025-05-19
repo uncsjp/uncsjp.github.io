@@ -1,0 +1,12 @@
+ul.react-paginate {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0 5rem;
+}
+
+ul.react-paginate li {
+    display: inline;
+}

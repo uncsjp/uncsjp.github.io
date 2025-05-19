@@ -78,6 +78,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
     - green: tailwind green 400
     - grey: tailwind grey 200
     - red: tailwind red 300
+- icons are from iconfinder.com
 
 ### Future work
 
