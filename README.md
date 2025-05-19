@@ -74,6 +74,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - using prettier + eslint
 - devloping the project with npm start
 - commit strategy?
+- color scheme
+    - green: tailwind green 400
+    - grey: tailwind grey 200
+    - red: tailwind red 300
 
 ### Future work
 
