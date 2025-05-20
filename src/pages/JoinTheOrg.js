@@ -5,6 +5,8 @@ import ReactPaginate from 'react-paginate';
 import Container from '../utilities/Container'
 import TextBox from '../utilities/TextBox'
 
+// Any other object attributes will be ignored!
+// Only icons for a google_form, instagram, linktree, substack, telegram, and website exist at the moment
 const triangle_orgs_init = [
     {
         "name": "community justice & abolition collective",
@@ -184,11 +186,11 @@ const PaginatedItems = ({ items_per_page }) => {
             <Container bg_color={"bg-red-300"}>
                 <ReactPaginate
                     breakLabel="..."
-                    nextLabel="next >"
+                    nextLabel=">"
                     onPageChange={handle_page_click}
                     pageRangeDisplayed={5}
                     pageCount={page_count}
-                    previousLabel="< previous"
+                    previousLabel="<"
                     renderOnZeroPageCount={null}
                     className="react-paginate"
                 />
@@ -206,14 +208,59 @@ const JoinTheOrg = () => {
                 <TextBox
                     header={"Join SJP!"}
                 />
+
                 {/* Interest Form */}
+                <TextBox
+                    header_size='2xl'
+                    header={"Interested in organizing with SJP?"}
+                    text={"Fill out our interest form!"}
+                >
+
+                </TextBox>
+
                 {/* Newsletter */}
+                <TextBox
+                    header_size='2xl'
+                    header={"Interested in receiving the newsletter?"}
+                    text={"Sign up on mailchimp!"}
+                >
+
+                </TextBox>
+
                 {/* Coalition */}
+                <TextBox
+                    header_size='2xl'
+                    header={"Interested in organizational partnership or want to contact us?"}
+                    text={"Reach out via instagram!"}
+                >
+
+                </TextBox>
+
+                {/* Linktree & Telegram */}
+                <TextBox
+                    header_size='2xl'
+                    header={"Check out our other links"}
+                >
+                    <Container bg_color={"bg-red-300"}>
+                        <a href={"https://linktr.ee/uncchapelhillsjp"}>
+                            <img className="w-8 h-8 inline" src={`/icons/linktree.png`} alt={"UNC SJP linktree"}/>
+                            UNC SJP Linktree
+                        </a>
+                    </Container>
+                    <Container bg_color={"bg-red-300"}>
+                        <a href={"https://t.me/+VZnLtNQYB2Q5NDgx"}>
+                            <img className="w-8 h-8 inline" src={`/icons/telegram.png`} alt={"UNC SJP linktree"}/>
+                            UNC SJP Telegram
+                        </a>
+                    </Container>
+                </TextBox>
             </div>
+
+            {/* Other orgs */}
             <div className="contents md:flex md:flex-col w-2/5">
                 <TextBox header={"Join other local orgs!"} />
                 <Container>
-                    <PaginatedItems items_per_page={4} />
+                    <PaginatedItems items_per_page={3} />
                 </Container>
             </div>
         </div>
