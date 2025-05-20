@@ -1,10 +1,10 @@
-const Container = ({children, bg_color="bg-gray-200"}) => {
+const Container = ({children, bg_color="bg-gray-200", styles=null}) => {
     let color_intensity = bg_color.match(/(\d+)/);
     let bg_hover = "hover:".concat(bg_color.replace(color_intensity[0], String(Number(color_intensity[0]) + 100)));
 
     return (
         <div
-            className={"justify-items-stretch rounded-lg mt-1 mb-1 ml-1 mr-1 p-1 w-99".concat(" ", bg_color, " ", bg_hover)}
+            className={`rounded-lg m-1 p-1 w-99 ${bg_color} ${bg_hover} ${styles}`}
         >
             {children}
         </div>

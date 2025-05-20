@@ -6,7 +6,7 @@ import Container from '../utilities/Container'
 import TextBox from '../utilities/TextBox'
 
 // Any other object attributes will be ignored!
-// Only icons for a google_form, instagram, linktree, substack, telegram, and website exist at the moment
+// Only icons for a google_form, instagram, linktree, substack, telegram, mailchimp, cryptpad and website exist at the moment
 const triangle_orgs_init = [
     {
         "name": "community justice & abolition collective",
@@ -215,6 +215,12 @@ const JoinTheOrg = () => {
                     header={"Interested in organizing with SJP?"}
                     text={"Fill out our interest form!"}
                 >
+                    <a href={"https://www.instagram.com/uncsjp/"}>
+                        <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
+                            <img className="w-8 h-8 inline mr-1" src={`/icons/cryptpad.png`} alt={"UNC SJP cryptpad interest form"}/>
+                            Cryptpad Interest Form
+                        </Container>
+                    </a>
 
                 </TextBox>
 
@@ -224,6 +230,12 @@ const JoinTheOrg = () => {
                     header={"Interested in receiving the newsletter?"}
                     text={"Sign up on mailchimp!"}
                 >
+                    <a href={"https://gmail.us17.list-manage.com/subscribe?u=73a81bd71c0831f152215407f&id=f8de748d7d"}>
+                        <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
+                            <img className="w-8 h-8 inline mr-1" src={`/icons/mailchimp.png`} alt={"UNC SJP newsletter signup"}/>
+                            Mailchimp Signup Link
+                        </Container>
+                    </a>
 
                 </TextBox>
 
@@ -233,6 +245,12 @@ const JoinTheOrg = () => {
                     header={"Interested in organizational partnership or want to contact us?"}
                     text={"Reach out via instagram!"}
                 >
+                    <a href={"https://www.instagram.com/uncsjp/"}>
+                        <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
+                            <img className="w-8 h-8 inline mr-1" src={`/icons/instagram.png`} alt={"UNC SJP instagram"}/>
+                            UNC SJP Instagram
+                        </Container>
+                    </a>
 
                 </TextBox>
 
@@ -241,18 +259,18 @@ const JoinTheOrg = () => {
                     header_size='2xl'
                     header={"Check out our other links"}
                 >
-                    <Container bg_color={"bg-red-300"}>
-                        <a href={"https://linktr.ee/uncchapelhillsjp"}>
-                            <img className="w-8 h-8 inline" src={`/icons/linktree.png`} alt={"UNC SJP linktree"}/>
+                    <a href={"https://linktr.ee/uncchapelhillsjp"}>
+                        <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
+                            <img className="w-8 h-8 inline mr-1" src={`/icons/linktree.png`} alt={"UNC SJP linktree"}/>
                             UNC SJP Linktree
-                        </a>
-                    </Container>
-                    <Container bg_color={"bg-red-300"}>
-                        <a href={"https://t.me/+VZnLtNQYB2Q5NDgx"}>
-                            <img className="w-8 h-8 inline" src={`/icons/telegram.png`} alt={"UNC SJP linktree"}/>
+                        </Container>
+                    </a>
+                    <a href={"https://t.me/+VZnLtNQYB2Q5NDgx"}>
+                        <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
+                            <img className="w-8 h-8 inline mr-1" src={`/icons/telegram.png`} alt={"UNC SJP telegram"}/>
                             UNC SJP Telegram
-                        </a>
-                    </Container>
+                        </Container>
+                    </a>
                 </TextBox>
             </div>
 
@@ -260,7 +278,7 @@ const JoinTheOrg = () => {
             <div className="contents md:flex md:flex-col w-2/5">
                 <TextBox header={"Join other local orgs!"} />
                 <Container>
-                    <PaginatedItems items_per_page={3} />
+                    <PaginatedItems items_per_page={4} />
                 </Container>
             </div>
         </div>
