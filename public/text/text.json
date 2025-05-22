@@ -27,5 +27,30 @@
             "text": ""
         }
     ],
-    "sjp_on_campus": []
+    "sjp_on_campus": [
+        {
+            "id":0,
+            "date": "",
+            "title": "event 1",
+            "description": "ipsum lorem dolum emet"
+        },
+        {
+            "id":1,
+            "date": "",
+            "title": "event 2",
+            "description": "ipsum lorem dolum emet"
+        },
+        {
+            "id":2,
+            "date": "",
+            "title": "event 3",
+            "description": "ipsum lorem dolum emet"
+        },
+        {
+            "id":3,
+            "date": "",
+            "title": "event 4",
+            "description": "ipsum lorem dolum emet"
+        }
+    ]
 }

@@ -85,3 +85,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - add pre-commit prettier hooks
 - make principles and goals page dynamic
     - set of images to divide between pages?
+- set max logo and favicon sizes

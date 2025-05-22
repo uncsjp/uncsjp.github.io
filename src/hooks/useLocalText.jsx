@@ -23,6 +23,7 @@ function useLocalText({ section, setter }) {
             .then((jsx) => {
                 // Set content
                 setter(jsx)
+                console.log(jsx)
             })
             .catch((e) => console.error(e))
         return () => {}
