@@ -1,6 +1,6 @@
 import Image from '../utilities/Image'
 import TextBox from '../utilities/TextBox'
-import useLocalText from '../hooks/useLocalText'
+import useLocalTextAsTextboxes from '../hooks/useLocalTextAsTextboxes'
 import { useState } from 'react'
 
 const PrinciplesAndGoals = () => {
@@ -12,7 +12,7 @@ const PrinciplesAndGoals = () => {
         />
     )
 
-    useLocalText({ section: 'principles_and_goals', setter: set_text })
+    useLocalTextAsTextboxes({ section: 'principles_and_goals', setter: set_text })
 
     return (
         <div

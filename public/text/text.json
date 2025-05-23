@@ -30,25 +30,25 @@
     "sjp_on_campus": [
         {
             "id":0,
-            "date": "",
+            "date": "May",
             "title": "event 1",
             "description": "ipsum lorem dolum emet"
         },
         {
             "id":1,
-            "date": "",
+            "date": "Apr",
             "title": "event 2",
             "description": "ipsum lorem dolum emet"
         },
         {
             "id":2,
-            "date": "",
+            "date": "Feb",
             "title": "event 3",
             "description": "ipsum lorem dolum emet"
         },
         {
             "id":3,
-            "date": "",
+            "date": "Jan",
             "title": "event 4",
             "description": "ipsum lorem dolum emet"
         }
