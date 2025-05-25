@@ -3,27 +3,26 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@craco/craco": "^7.1.0",
+        "@tailwindcss/cli": "^4.1.7",
+        "@tailwindcss/vite": "^4.1.7",
         "@testing-library/dom": "^10.4.0",
         "@testing-library/jest-dom": "^6.6.3",
         "@testing-library/react": "^16.2.0",
         "@testing-library/user-event": "^13.5.0",
-        "autoprefixer": "^9.8.8",
-        "craco": "^0.0.3",
+        "@vitejs/plugin-react": "^4.5.0",
         "eslint": "^8.57.1",
-        "postcss": "^8.5.3",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
-        "react-scripts": "^5.0.1",
         "tailwindcss": "^4.1.7",
+        "vite": "^6.3.5",
         "web-vitals": "^2.1.4"
     },
     "scripts": {
-        "start": "craco start",
-        "build": "craco build",
-        "test": "craco test",
-        "eject": "react-scripts eject",
+        "start": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
         "lint": "npx eslint .",
+        "pretty": "prettier . --wriie",
         "fetch-site-content": "node scripts/fetchSiteText.mjs"
     },
     "eslintConfig": {
@@ -51,7 +50,6 @@
         "eslint-config-prettier": "^10.1.5",
         "eslint-plugin-react": "^7.37.5",
         "prettier": "^3.5.3",
-        "puppeteer": "^24.4.0",
         "react-devtools": "^6.1.2",
         "react-paginate": "^8.3.0",
         "react-router-dom": "^7.4.0"

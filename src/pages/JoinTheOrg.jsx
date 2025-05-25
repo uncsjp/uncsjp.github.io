@@ -132,11 +132,11 @@ triangle_orgs_init.sort((a, b) => { return a.name < b.name ? -1 : a.name > b.nam
 const OrgCard = ({org}) => {
     return (
         <Container bg_color={"bg-red-300"}>
-            <div className="flex flex-row flex-shrink-0 justify-between">
+            <div className="flex flex-row shrink-0 justify-between">
 
                 <div className="flex flex-row">
                     {/* Org logo */}
-                    <div className="m-0.5 mr-2 flex items-center flex-shrink-0">
+                    <div className="m-0.5 mr-2 flex items-center shrink-0">
                         <img className="rounded-full h-12 w-12" src={org.logohref} alt={org.name} />
                     </div>
                     {/* Org name and description */}
@@ -151,7 +151,7 @@ const OrgCard = ({org}) => {
                 </div>
 
                 {/* Org links */}
-                <div className="flex items-center flex-shrink-0">
+                <div className="flex items-center shrink-0">
                     <div className="m-0.5 flex items-center">
                         {Object.keys(org.links).map((key, index) => {
                             return (
