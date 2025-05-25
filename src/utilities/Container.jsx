@@ -4,7 +4,7 @@ const Container = ({children, bg_color="bg-gray-200", styles=null}) => {
 
     return (
         <div
-            className={`rounded-lg m-1 p-1 w-99 ${bg_color} ${bg_hover} ${styles}`}
+            className={`rounded-lg m-1 p-1 w-[99%] ${bg_color} ${bg_hover} ${styles}`}
         >
             {children}
         </div>

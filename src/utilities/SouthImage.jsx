@@ -1,4 +1,4 @@
-import southImage from './img/output-onlinepngtools.png'
+import southImage from '../img/output-onlinepngtools.png'
 
 const SouthImage = () => {
     return (
@@ -7,7 +7,7 @@ const SouthImage = () => {
         grid grid-cols-5 gap-2
         text-2xl text-center font-bold
         mt-2 mb-2 ml-1 mr-1
-        rounded-lg bg-cover bg-center h-64 w-99"
+        rounded-lg bg-cover bg-center h-64 w-[99%]"
             style={{
                 backgroundImage: `url(${southImage})`,
                 gridTemplateRows: 'repeat(7, 1fr)',

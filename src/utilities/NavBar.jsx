@@ -6,7 +6,7 @@ const NavBar = () => {
         <div
             className="flex justify-center items-center sticky
             rounded-b-lg m-0
-            top-0 w-screen h-20 md:h-20 lg:h-24
+            top-0 w-full h-20 md:h-20 lg:h-24
             bg-green-400"
         >
             <img

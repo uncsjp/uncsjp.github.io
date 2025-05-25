@@ -9,4 +9,5 @@ ul.react-paginate {
 
 ul.react-paginate li {
     display: inline;
+    cursor: pointer !important;
 }

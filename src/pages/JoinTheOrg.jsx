@@ -215,12 +215,14 @@ const JoinTheOrg = () => {
                     header={"Interested in organizing with SJP?"}
                     text={"Fill out our interest form!"}
                 >
-                    <a href={"https://www.instagram.com/uncsjp/"}>
-                        <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
-                            <img className="w-8 h-8 inline mr-1" src={`/icons/cryptpad.png`} alt={"UNC SJP cryptpad interest form"}/>
-                            Cryptpad Interest Form
-                        </Container>
-                    </a>
+                    <div className="flex justify-center">
+                        <a href={"https://www.instagram.com/uncsjp/"} className="w-full">
+                            <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
+                                <img className="w-8 h-8 inline mr-1" src={`/icons/cryptpad.png`} alt={"UNC SJP cryptpad interest form"}/>
+                                Cryptpad Interest Form
+                            </Container>
+                        </a>
+                    </div>
 
                 </TextBox>
 
@@ -230,12 +232,14 @@ const JoinTheOrg = () => {
                     header={"Interested in receiving the newsletter?"}
                     text={"Sign up on mailchimp!"}
                 >
-                    <a href={"https://gmail.us17.list-manage.com/subscribe?u=73a81bd71c0831f152215407f&id=f8de748d7d"}>
-                        <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
-                            <img className="w-8 h-8 inline mr-1" src={`/icons/mailchimp.png`} alt={"UNC SJP newsletter signup"}/>
-                            Mailchimp Signup Link
-                        </Container>
-                    </a>
+                    <div className="flex justify-center">
+                        <a href={"https://gmail.us17.list-manage.com/subscribe?u=73a81bd71c0831f152215407f&id=f8de748d7d"} className="w-full">
+                            <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
+                                <img className="w-8 h-8 inline mr-1" src={`/icons/mailchimp.png`} alt={"UNC SJP newsletter signup"}/>
+                                Mailchimp Signup Link
+                            </Container>
+                        </a>
+                    </div>
 
                 </TextBox>
 
@@ -245,12 +249,14 @@ const JoinTheOrg = () => {
                     header={"Interested in organizational partnership or want to contact us?"}
                     text={"Reach out via instagram!"}
                 >
-                    <a href={"https://www.instagram.com/uncsjp/"}>
-                        <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
-                            <img className="w-8 h-8 inline mr-1" src={`/icons/instagram.png`} alt={"UNC SJP instagram"}/>
-                            UNC SJP Instagram
-                        </Container>
-                    </a>
+                    <div className="flex justify-center w-full">
+                        <a href={"https://www.instagram.com/uncsjp/"} className="w-full">
+                            <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
+                                <img className="w-8 h-8 inline mr-1" src={`/icons/instagram.png`} alt={"UNC SJP instagram"}/>
+                                UNC SJP Instagram
+                            </Container>
+                        </a>
+                    </div>
 
                 </TextBox>
 
@@ -259,18 +265,21 @@ const JoinTheOrg = () => {
                     header_size='2xl'
                     header={"Check out our other links"}
                 >
-                    <a href={"https://linktr.ee/uncchapelhillsjp"}>
-                        <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
-                            <img className="w-8 h-8 inline mr-1" src={`/icons/linktree.png`} alt={"UNC SJP linktree"}/>
-                            UNC SJP Linktree
-                        </Container>
-                    </a>
-                    <a href={"https://t.me/+VZnLtNQYB2Q5NDgx"}>
-                        <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
-                            <img className="w-8 h-8 inline mr-1" src={`/icons/telegram.png`} alt={"UNC SJP telegram"}/>
-                            UNC SJP Telegram
-                        </Container>
-                    </a>
+                    <div className="flex justify-center w-full">
+                        <a href={"https://linktr.ee/uncchapelhillsjp"} className="w-full">
+
+                            <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
+                                <img className="w-8 h-8 inline mr-1" src={`/icons/linktree.png`} alt={"UNC SJP linktree"}/>
+                                UNC SJP Linktree
+                            </Container>
+                        </a>
+                        <a href={"https://t.me/+VZnLtNQYB2Q5NDgx"} className="w-full">
+                            <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
+                                <img className="w-8 h-8 inline mr-1" src={`/icons/telegram.png`} alt={"UNC SJP telegram"}/>
+                                UNC SJP Telegram
+                            </Container>
+                        </a>
+                    </div>
                 </TextBox>
             </div>
 

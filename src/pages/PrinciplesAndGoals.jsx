@@ -27,12 +27,13 @@ const PrinciplesAndGoals = () => {
                 {text_boxes[0]}
                 <Image key={10} url={'protest_from_south.jpg'} />
                 {text_boxes[1]}
+                {text_boxes[4]}
             </div>
             <div className="contents md:flex md:flex-col">
                 {text_boxes[2]}
                 <Image key={20} url={'peoples_grad.jpg'} />
                 {text_boxes[3]}
-                {text_boxes[4]}
+
             </div>
         </div>
     )
