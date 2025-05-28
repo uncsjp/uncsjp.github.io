@@ -20,20 +20,40 @@ const Date = ({event, width}) => {
     )
 }
 
+const Draw = ({num_events}) => {
+    const svg_ref = useRef(null);
+    const [svg_width, set_svg_width] = useState(0);
+    const [svg_height, set_svg_height] = useState(0);
+
+    // Get heigh and width of the svg
+    useEffect(() => {
+        set_svg_width(svg_ref.current.getBoundingClientRect().width)
+        set_svg_height(svg_ref.current.getBoundingClientRect().height)
+    })
+
+    return (
+        <svg ref={svg_ref} className="w-full">
+            <line x1="0" y1={`${svg_height / 2}`} x2={`${svg_width}`} y2={`${svg_height / 2}`} stroke="black" />
+        </svg>
+    )
+}
+
 const Row = ({events}) => {
     const row_ref = useRef(null);
-    const [width, set_width] = useState(0);
+    const [container_width, set_container_width] = useState(0);
+
     // Get the width of the row
     useEffect(() => {
-        set_width(row_ref.current.getBoundingClientRect().width)
+        set_container_width(row_ref.current.getBoundingClientRect().width)
     });
 
+    // fns to create events w/o scope issues (access to contaner_width)
     const create_event = (event) => {
-        return (<Event event={event} width={width / events.length} />)
+        return (<Event event={event} width={container_width / events.length} />)
     }
 
     const create_date = (event) => {
-        return (<Date event={event} width={width / events.length} />)
+        return (<Date event={event} width={container_width / events.length} />)
     }
 
     return (
@@ -41,9 +61,7 @@ const Row = ({events}) => {
             <div className="flex justify-center">
                 {events.map(create_event)}
             </div>
-            <svg width={width}>
-                <line x1="0" y1="80" x2="100" y2="20" stroke="black" />
-            </svg>
+            <Draw num_events={events.length}/>
             <div className="flex justify-center">
                 {events.map(create_date)}
             </div>
