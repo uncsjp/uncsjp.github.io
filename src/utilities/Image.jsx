@@ -2,7 +2,7 @@ const Image = ({ url, text = null }) => {
     return (
         <div
             className="
-            mt-2 mb-2 ml-1 mr-1
+            m-1
             text-2xl text-center font-bold
             rounded-lg bg-cover bg-center h-64 w-[99%]
             justify-center

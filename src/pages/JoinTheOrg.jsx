@@ -131,7 +131,7 @@ triangle_orgs_init.sort((a, b) => { return a.name < b.name ? -1 : a.name > b.nam
 
 const OrgCard = ({org}) => {
     return (
-        <Container bg_color={"bg-red-300"}>
+        <Container bg_color={"red"}>
             <div className="flex flex-row shrink-0 justify-between">
 
                 <div className="flex flex-row">
@@ -183,7 +183,7 @@ const PaginatedItems = ({ items_per_page }) => {
 
     return (
         <>
-            <Container bg_color={"bg-red-300"}>
+            <Container bg_color={"red"}>
                 <ReactPaginate
                     breakLabel="..."
                     nextLabel=">"
@@ -217,7 +217,7 @@ const JoinTheOrg = () => {
                 >
                     <div className="flex justify-center">
                         <a href={"https://www.instagram.com/uncsjp/"} className="w-full">
-                            <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
+                            <Container bg_color={"red"} styles={"flex items-center"}>
                                 <img className="w-8 h-8 inline mr-1" src={`/icons/cryptpad.png`} alt={"UNC SJP cryptpad interest form"}/>
                                 Cryptpad Interest Form
                             </Container>
@@ -234,7 +234,7 @@ const JoinTheOrg = () => {
                 >
                     <div className="flex justify-center">
                         <a href={"https://gmail.us17.list-manage.com/subscribe?u=73a81bd71c0831f152215407f&id=f8de748d7d"} className="w-full">
-                            <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
+                            <Container bg_color={"red"} styles={"flex items-center"}>
                                 <img className="w-8 h-8 inline mr-1" src={`/icons/mailchimp.png`} alt={"UNC SJP newsletter signup"}/>
                                 Mailchimp Signup Link
                             </Container>
@@ -251,7 +251,7 @@ const JoinTheOrg = () => {
                 >
                     <div className="flex justify-center w-full">
                         <a href={"https://www.instagram.com/uncsjp/"} className="w-full">
-                            <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
+                            <Container bg_color={"red"} styles={"flex items-center"}>
                                 <img className="w-8 h-8 inline mr-1" src={`/icons/instagram.png`} alt={"UNC SJP instagram"}/>
                                 UNC SJP Instagram
                             </Container>
@@ -268,13 +268,13 @@ const JoinTheOrg = () => {
                     <div className="flex justify-center w-full">
                         <a href={"https://linktr.ee/uncchapelhillsjp"} className="w-full">
 
-                            <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
+                            <Container bg_color={"red"} styles={"flex items-center"}>
                                 <img className="w-8 h-8 inline mr-1" src={`/icons/linktree.png`} alt={"UNC SJP linktree"}/>
                                 UNC SJP Linktree
                             </Container>
                         </a>
                         <a href={"https://t.me/+VZnLtNQYB2Q5NDgx"} className="w-full">
-                            <Container bg_color={"bg-red-300"} styles={"flex items-center"}>
+                            <Container bg_color={"red"} styles={"flex items-center"}>
                                 <img className="w-8 h-8 inline mr-1" src={`/icons/telegram.png`} alt={"UNC SJP telegram"}/>
                                 UNC SJP Telegram
                             </Container>
