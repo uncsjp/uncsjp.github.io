@@ -7,7 +7,7 @@ import TextBox from "./TextBox";
 const Event = ({event, width}) => {
     return (
         <div style={{minWidth: `${width}px`, maxWidth: `${width}px`}}>
-            <TextBox key={event.id} header={event.title} text={event.description} bg_color="red"/>
+            <TextBox header={event.title} text={event.description} bg_color="red"/>
         </div>
     )
 }
@@ -15,7 +15,7 @@ const Event = ({event, width}) => {
 const Date = ({event, width}) => {
     return (
         <div style={{minWidth: `${width}px`, maxWidth: `${width}px`}}>
-            <TextBox key={event.id} header={event.date} bg_color="red"/>
+            <TextBox header={event.date} bg_color="red"/>
         </div>
     )
 }
@@ -44,16 +44,23 @@ const Row = ({events}) => {
 
     // Get the width of the row
     useEffect(() => {
-        set_container_width(row_ref.current.getBoundingClientRect().width)
+        const handle_resize = () => {
+            set_container_width(row_ref.current.getBoundingClientRect().width)
+            console.log(`new size is: ${container_width}`);
+        };
+        if (row_ref.current !== null) {
+            row_ref.current.addEventListener('resize', handle_resize);
+
+        }
     });
 
     // fns to create events w/o scope issues (access to contaner_width)
     const create_event = (event) => {
-        return (<Event event={event} width={container_width / events.length} />)
+        return (<Event key={event.id} event={event} width={container_width / events.length} />)
     }
 
     const create_date = (event) => {
-        return (<Date event={event} width={container_width / events.length} />)
+        return (<Date key={event.id} event={event} width={container_width / events.length} />)
     }
 
     return (
