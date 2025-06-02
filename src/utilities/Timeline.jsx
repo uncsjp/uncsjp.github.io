@@ -4,18 +4,7 @@ import useLocalText from "../hooks/useLocalText";
 
 import Container from "./Container";
 import Divider from "./Divider";
-
-const Sort = () => {
-    return (
-        <Container display="flex">
-            <Container border_color="gray" shadow="md" display="inline" width="auto">Sort by...</Container>
-            <Container border_color="red" display="inline" width="auto">Oldest first</Container>
-            <Container border_color="red" display="inline" width="auto">Most recent first</Container>
-            <Container border_color="gray" shadow="md" display="inline" width="auto">Filter by date...</Container>
-            <Container border_color="gray" shadow="md" display="inline" width="auto">Filter by title...</Container>
-        </Container>
-    );
-};
+import FilterInput from "./FilterInput";
 
 const ExtendedDescription = ({text}) => {
     return (
@@ -150,26 +139,47 @@ const TimelineRow = ({events}) => {
 
 const Timeline = () => {
     const [events, set_events] = useState([{"id":2, "date":"Loading...", "title":"Loading...", "rationale":"Loading...", "outcome":"Loading..."}]);
+    const [filtered_events, set_filtered_events] = useState(events)
     const [rows, set_rows] = useState([[]])
+
+    const [title_filter, set_title_filter] = useState("")
+    const [date_filter, set_date_filter] = useState("")
 
     useLocalText({section: 'sjp_on_campus', setter: set_events});
 
+    // Applies filter when events changes or filters changed
     useEffect(() => {
+        set_filtered_events(
+            events.filter((e) => {return e.title.toLowerCase().includes(title_filter.toLowerCase()) || title_filter === ""})
+            .filter((e) => {return e.date.toLowerCase().includes(date_filter.toLowerCase()) || date_filter === ""})
+        )
+    }, [title_filter, date_filter, events])
+
+    useEffect(() => {
+        // Cut events array into rows of length specified by MAX_PER_ROW
         let rows_temp = []
-        const max_per_row = 4
-        for (let i = 0; i < Math.ceil(events.length / max_per_row); i++) {
-            let end_slice = (i + 1) * max_per_row
-            rows_temp.push(events.slice(
-                i * max_per_row,
-                end_slice > events.length ? events.length : end_slice
+        const MAX_PER_ROW = 4
+        for (let i = 0; i < Math.ceil(filtered_events.length / MAX_PER_ROW); i++) {
+            let end_slice = (i + 1) * MAX_PER_ROW
+            rows_temp.push(filtered_events.slice(
+                i * MAX_PER_ROW,
+                end_slice > filtered_events.length ? filtered_events.length : end_slice
             ))
         }
         set_rows(rows_temp)
-    }, [events])
+    }, [filtered_events])
 
     return (
-        <Container display_bg_hover="false">
-            <Sort />
+        <Container display_bg_hover="false" overflow="auto">
+            <Container display="flex">
+                <Container border_color="gray" shadow="md" display="inline" width="auto">Sort by...</Container>
+                <Container border_color="red" display="inline" width="auto">Oldest first</Container>
+                <Container border_color="red" display="inline" width="auto">Most recent first</Container>
+                <Container border_color="gray" shadow="md" display="inline" width="auto">Filter by date...</Container>
+                <FilterInput placeholder="Events with date..." setter={set_date_filter} />
+                <Container border_color="gray" shadow="md" display="inline" width="auto">Filter by title...</Container>
+                <FilterInput placeholder="Events with title..." setter={set_title_filter} />
+            </Container>
             {rows.map((row_of_events, idx) => {
                 return <TimelineRow key={idx} events={row_of_events} />
             })}

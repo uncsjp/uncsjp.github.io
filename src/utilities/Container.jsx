@@ -10,6 +10,7 @@ const Container = ({children,
     justify="none",
     padding="1",
     margin="m1",
+    overflow="none"
     }) => {
 
     const margin_variants = {
@@ -68,13 +69,18 @@ const Container = ({children,
 
     const justify_variants = {
         between: "justify-between",
-        none: "none"
+        none: ""
     }
 
+    const overflow_variants = {
+        auto: "overflow-auto",
+        none: ""
+    }
 
     return (
         <div
-            className={`rounded-lg
+            className={`
+                rounded-lg
                 ${padding_variants[padding]}
                 ${width_variants[width]}
                 ${min_width_variants[min_width]}
@@ -84,7 +90,9 @@ const Container = ({children,
                 ${direction_variants[display]}
                 ${flex_direction_variants[direction]}
                 ${justify_variants[justify]}
-                ${margin_variants[margin]}`}
+                ${margin_variants[margin]}
+                ${overflow_variants[overflow]}
+            `}
         >
             {children}
         </div>
