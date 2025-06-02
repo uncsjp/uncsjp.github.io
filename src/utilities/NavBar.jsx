@@ -7,7 +7,8 @@ const NavBar = () => {
             className="flex justify-center items-center sticky
             rounded-b-lg m-0
             top-0 w-full h-20 md:h-20 lg:h-24
-            bg-green-400"
+            bg-green-400
+            z-50"
         >
             <img
                 className="h-10 md:h-12 lg:h-14 m-2"

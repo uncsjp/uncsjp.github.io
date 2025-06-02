@@ -2,89 +2,160 @@ import { useEffect, useRef, useState } from "react";
 
 import useLocalText from "../hooks/useLocalText";
 
-import TextBox from "./TextBox";
+import Container from "./Container";
+import Divider from "./Divider";
 
-const Event = ({event, width}) => {
+const Sort = () => {
     return (
-        <div style={{minWidth: `${width}px`, maxWidth: `${width}px`}}>
-            <TextBox header={event.title} text={event.description} bg_color="red"/>
+        <Container display="flex">
+            <Container border_color="gray" shadow="md" display="inline" width="auto">Sort by...</Container>
+            <Container border_color="red" display="inline" width="auto">Oldes first</Container>
+            <Container border_color="red" display="inline" width="auto">Most recent first</Container>
+            <Container border_color="gray" shadow="md" display="inline" width="auto">Filter by date...</Container>
+            <Container border_color="gray" shadow="md" display="inline" width="auto">Filter by title...</Container>
+        </Container>
+    );
+};
+
+const ExtendedDescription = ({text}) => {
+    return (
+        <div className="absolute left-0 top-full max-h-64 min-w-full p-1 bg-gray-200 hover:bg-gray-300
+            rounded-tl-xl rounded-bl-xl rounded-br-xl border-red-400 border-solid border-5
+            text-base overflow-auto z-10">
+            {text}
         </div>
     )
 }
 
-const Date = ({event, width}) => {
-    return (
-        <div style={{minWidth: `${width}px`, maxWidth: `${width}px`}}>
-            <TextBox header={event.date} bg_color="red"/>
-        </div>
-    )
-}
+const Event = ({event}) => {
+    const [rationale_clicked, set_rationale_clicked] = useState(false)
+    const [outcome_clicked, set_outcome_clicked] = useState(false)
+    const [rationale_hovered, set_rationale_hovered] = useState(false)
+    const [outcome_hovered, set_outcome_hovered] = useState(false)
 
-const Draw = ({num_events}) => {
-    const svg_ref = useRef(null);
-    const [svg_width, set_svg_width] = useState(0);
-    const [svg_height, set_svg_height] = useState(0);
+    const rationale_ref = useRef(null)
+    const outcome_ref = useRef(null)
 
-    // Get heigh and width of the svg
     useEffect(() => {
-        set_svg_width(svg_ref.current.getBoundingClientRect().width)
-        set_svg_height(svg_ref.current.getBoundingClientRect().height)
-    })
-
-    return (
-        <svg ref={svg_ref} className="w-full">
-            <line x1="0" y1={`${svg_height / 2}`} x2={`${svg_width}`} y2={`${svg_height / 2}`} stroke="black" />
-        </svg>
-    )
-}
-
-const Row = ({events}) => {
-    const row_ref = useRef(null);
-    const [container_width, set_container_width] = useState(0);
-
-    // Get the width of the row
-    useEffect(() => {
-        const handle_resize = () => {
-            set_container_width(row_ref.current.getBoundingClientRect().width)
-            console.log(`new size is: ${container_width}`);
-        };
-        if (row_ref.current !== null) {
-            row_ref.current.addEventListener('resize', handle_resize);
-
+        const click_outside_rationale = (event) => {
+            if (rationale_ref && !rationale_ref.current.contains(event.target)) {
+                set_rationale_clicked(false)
+            }
         }
-    });
 
-    // fns to create events w/o scope issues (access to contaner_width)
-    const create_event = (event) => {
-        return (<Event key={event.id} event={event} width={container_width / events.length} />)
-    }
+        const click_outside_outcome = (event) => {
+            if (outcome_ref && !outcome_ref.current.contains(event.target)) {
+                set_outcome_clicked(false)
+            }
+        }
 
-    const create_date = (event) => {
-        return (<Date key={event.id} event={event} width={container_width / events.length} />)
-    }
+        document.addEventListener('mousedown', click_outside_rationale)
+        document.addEventListener('mousedown', click_outside_outcome)
+        return () => {
+            document.removeEventListener('mousedown', click_outside_rationale)
+            document.removeEventListener('mousedown', click_outside_outcome)
+        }
+    }, [])
 
     return (
-        <div ref={row_ref} className="w-[99%]">
-            <div className="flex justify-center">
-                {events.map(create_event)}
+        <Container display="flex" direction="column" border_color="gray" shadow="md" min_width="160" margin="mb0">
+
+            {/* header  */}
+            <Container bg_color="red" display="flex" direction="row" justify="between" padding="0" shadow="md">
+                <div className="text-xl m-2">
+                    {event.title}
+                </div>
+                <div className="flex flex-row border-l-2 border-l-gray-200 hover:border-l-gray-300">
+                    <div className="text-xl inline m-2">
+                        {event.date}
+                    </div>
+                </div>
+            </Container>
+
+            {/* rationale */}
+            <div className="relative">
+                <Container bg_color="red" display="flex" direction="row" justify="between" padding="0" shadow="md">
+                    <div className="text-base m-2 line-clamp-1">
+                        {event.rationale}
+                    </div>
+                    <div className="flex flex-row border-l-2 border-l-gray-200 hover:border-l-gray-300 justify-center"
+                        ref={rationale_ref}
+                        onClick={() => set_rationale_clicked(true)}
+                        onMouseEnter={() => set_rationale_hovered(true)}
+                        onMouseLeave={() => set_rationale_hovered(false)}
+                    >
+                        <img src="/icons/rtriangle.svg" alt="Show more" className="min-w-[30px] m-2"/>
+                    </div>
+                    {(rationale_clicked || rationale_hovered) && <ExtendedDescription text={event.rationale}/>}
+                </Container>
             </div>
-            <Draw num_events={events.length}/>
-            <div className="flex justify-center">
-                {events.map(create_date)}
+
+            {/* outcome  */}
+            <div className="relative">
+                <Container bg_color="red" display="flex" direction="row" justify="between" padding="0" shadow="md">
+                    <div className="text-base m-2 line-clamp-3">
+                        {event.outcome}
+                    </div>
+                    <div className="flex flex-row border-l-2 border-l-gray-200 hover:border-l-gray-300 justify-center"
+                        ref={outcome_ref}
+                        onClick={() => set_outcome_clicked(true)}
+                        onMouseEnter={() => set_outcome_hovered(true)}
+                        onMouseLeave={() => set_outcome_hovered(false)}
+                    >
+                        <img src="/icons/rtriangle.svg" alt="Show more" className="min-w-[30px] m-2" />
+                    </div>
+                    {(outcome_clicked || outcome_hovered) && <ExtendedDescription text={event.outcome} />}
+                </Container>
             </div>
+
+            {/* gallery */}
+            <Container bg_color="red" display="flex" direction="row" justify="between" padding="0" shadow="md">
+                <div className="text-xl m-2 flex justify-center items-center w-full">
+                    <div>
+                        Photos
+                    </div>
+                </div>
+                <div className="flex flex-row border-l-2 border-l-gray-200 hover:border-l-gray-300 justify-center">
+                    <img src="/icons/rtriangle.svg" alt="Show more" className="min-w-[30px] m-2" />
+                </div>
+            </Container>
+        </Container>
+    );
+};
+
+const TimelineRow = ({events}) => {
+    return (
+        <div className="w-full flex flex-col">
+            <div className="w-full flex flex-row gap-4">
+                {events.map((e) => {
+                    return <Event event={e} key={e.id} />
+                })}
+            </div>
+            <div className="w-full flex flex-row">
+                {events.map((e) => {
+                    return (
+                        <div className="w-full grid justify-items-center align-middle">
+                            <img src="/icons/varrow.svg" className=""/>
+                        </div>
+                    )
+                })}
+            </div>
+            <img src="/icons/barrow.svg" className="w-full scale-y-150"/>
         </div>
-   )
+    )
 }
 
 const Timeline = () => {
-    const [events, set_events] = useState([{"id":2, "date":"Loading...", "title":"Loading...", "description":""}]);
+    const [events, set_events] = useState([{"id":2, "date":"Loading...", "title":"Loading...", "rationale":"Loading...", "outcome":"Loading..."}]);
 
     useLocalText({section: 'sjp_on_campus', setter: set_events});
 
     return (
-        <div className="w-full flex justify-center">
-            <Row events={events}/>
-        </div>
+        <Container display_bg_hover="false">
+            <Sort />
+            <Divider />
+            <TimelineRow events={events} />
+        </Container>
     )
 };
 

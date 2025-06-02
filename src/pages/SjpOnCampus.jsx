@@ -3,9 +3,7 @@ import Timeline from '../utilities/Timeline'
 
 const SjpOnCampus = () => {
     return (
-        <Container styles={"w-full"}>
-            <Timeline />
-        </Container>
+        <Timeline />
     )
 }
 
