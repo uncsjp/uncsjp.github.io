@@ -5,6 +5,7 @@ import useLocalText from "../hooks/useLocalText";
 import Container from "./Container";
 import Divider from "./Divider";
 import FilterInput from "./FilterInput";
+import sort_by_younger_date from "./functions/sort_by_younger_date";
 
 const ExtendedDescription = ({text}) => {
     return (
@@ -150,10 +151,15 @@ const Timeline = () => {
 
     // Applies filter when events changes or filters changed
     useEffect(() => {
-        set_filtered_events(
-            events.filter((e) => {return e.title.toLowerCase().includes(title_filter.toLowerCase()) || title_filter === ""})
+        let filtered = events.filter((e) => {return e.title.toLowerCase().includes(title_filter.toLowerCase()) || title_filter === ""})
             .filter((e) => {return `${e.date.month} ${e.date.year}`.toLowerCase().includes(date_filter.toLowerCase()) || date_filter === ""})
-        )
+            .sort(sort_by_younger_date)
+
+        if (!newest_first) {
+            filtered.reverse()
+        }
+
+        set_filtered_events(filtered)
     }, [title_filter, date_filter, newest_first, events])
 
     useEffect(() => {
