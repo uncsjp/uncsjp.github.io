@@ -8,7 +8,7 @@ import FilterInput from "./FilterInput";
 
 const ExtendedDescription = ({text}) => {
     return (
-        <div className="absolute left-0 top-full max-h-64 min-w-full p-1 bg-gray-200 hover:bg-gray-300
+        <div className="absolute left-0 top-full max-h-64 min-w-full p-1 bg-gray-300
             rounded-tl-xl rounded-bl-xl rounded-br-xl border-red-400 border-solid border-5
             text-base overflow-auto z-10">
             {text}
@@ -144,6 +144,7 @@ const Timeline = () => {
 
     const [title_filter, set_title_filter] = useState("")
     const [date_filter, set_date_filter] = useState("")
+    const [newest_first, set_newest_first] = useState(true)
 
     useLocalText({section: 'sjp_on_campus', setter: set_events});
 
@@ -153,7 +154,7 @@ const Timeline = () => {
             events.filter((e) => {return e.title.toLowerCase().includes(title_filter.toLowerCase()) || title_filter === ""})
             .filter((e) => {return `${e.date.month} ${e.date.year}`.toLowerCase().includes(date_filter.toLowerCase()) || date_filter === ""})
         )
-    }, [title_filter, date_filter, events])
+    }, [title_filter, date_filter, newest_first, events])
 
     useEffect(() => {
         // Cut events array into rows of length specified by MAX_PER_ROW
@@ -169,12 +170,17 @@ const Timeline = () => {
         set_rows(rows_temp)
     }, [filtered_events])
 
+    const button_bg = {
+        false: "bg-gray-200 hover:bg-red-400 hover:border-red-400",
+        true: "bg-red-300 hover:bg-red-400 hover:border-red-400"
+    }
+
     return (
         <Container display_bg_hover="false" overflow="auto">
             <Container display="flex">
                 <Container border_color="gray" shadow="md" display="inline" width="auto">Sort by...</Container>
-                <Container border_color="red" display="inline" width="auto">Oldest first</Container>
-                <Container border_color="red" display="inline" width="auto">Most recent first</Container>
+                <button className={`${button_bg[newest_first]} rounded-lg m-1 p-1 border-red-300 border-solid border-5`} onClick={() => {set_newest_first(true)}}>Youngest</button>
+                <button className={`${button_bg[!newest_first]} rounded-lg m-1 p-1 border-red-300 border-solid border-5`} onClick={() => {set_newest_first(false)}}>Oldest</button>
                 <Container border_color="gray" shadow="md" display="inline" width="auto">Filter by date...</Container>
                 <FilterInput placeholder="Events with date..." setter={set_date_filter} />
                 <Container border_color="gray" shadow="md" display="inline" width="auto">Filter by title...</Container>
