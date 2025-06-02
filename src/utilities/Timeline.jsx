@@ -9,7 +9,7 @@ const Sort = () => {
     return (
         <Container display="flex">
             <Container border_color="gray" shadow="md" display="inline" width="auto">Sort by...</Container>
-            <Container border_color="red" display="inline" width="auto">Oldes first</Container>
+            <Container border_color="red" display="inline" width="auto">Oldest first</Container>
             <Container border_color="red" display="inline" width="auto">Most recent first</Container>
             <Container border_color="gray" shadow="md" display="inline" width="auto">Filter by date...</Container>
             <Container border_color="gray" shadow="md" display="inline" width="auto">Filter by title...</Container>
@@ -62,11 +62,11 @@ const Event = ({event}) => {
 
             {/* header  */}
             <Container bg_color="red" display="flex" direction="row" justify="between" padding="0" shadow="md">
-                <div className="text-xl m-2">
+                <div className="text-xl m-1">
                     {event.title}
                 </div>
                 <div className="flex flex-row border-l-2 border-l-gray-200 hover:border-l-gray-300">
-                    <div className="text-xl inline m-2">
+                    <div className="text-xl inline m-1">
                         {event.date}
                     </div>
                 </div>
@@ -75,7 +75,7 @@ const Event = ({event}) => {
             {/* rationale */}
             <div className="relative">
                 <Container bg_color="red" display="flex" direction="row" justify="between" padding="0" shadow="md">
-                    <div className="text-base m-2 line-clamp-1">
+                    <div className="text-base m-1 line-clamp-1">
                         {event.rationale}
                     </div>
                     <div className="flex flex-row border-l-2 border-l-gray-200 hover:border-l-gray-300 justify-center"
@@ -84,7 +84,7 @@ const Event = ({event}) => {
                         onMouseEnter={() => set_rationale_hovered(true)}
                         onMouseLeave={() => set_rationale_hovered(false)}
                     >
-                        <img src="/icons/rtriangle.svg" alt="Show more" className="min-w-[30px] m-2"/>
+                        <img src="/icons/rtriangle.svg" alt="Show more" className="min-w-[30px] m-1"/>
                     </div>
                     {(rationale_clicked || rationale_hovered) && <ExtendedDescription text={event.rationale}/>}
                 </Container>
@@ -93,7 +93,7 @@ const Event = ({event}) => {
             {/* outcome  */}
             <div className="relative">
                 <Container bg_color="red" display="flex" direction="row" justify="between" padding="0" shadow="md">
-                    <div className="text-base m-2 line-clamp-3">
+                    <div className="text-base m-1 line-clamp-3">
                         {event.outcome}
                     </div>
                     <div className="flex flex-row border-l-2 border-l-gray-200 hover:border-l-gray-300 justify-center"
@@ -102,7 +102,7 @@ const Event = ({event}) => {
                         onMouseEnter={() => set_outcome_hovered(true)}
                         onMouseLeave={() => set_outcome_hovered(false)}
                     >
-                        <img src="/icons/rtriangle.svg" alt="Show more" className="min-w-[30px] m-2" />
+                        <img src="/icons/rtriangle.svg" alt="Show more" className="min-w-[30px] m-1" />
                     </div>
                     {(outcome_clicked || outcome_hovered) && <ExtendedDescription text={event.outcome} />}
                 </Container>
@@ -110,13 +110,13 @@ const Event = ({event}) => {
 
             {/* gallery */}
             <Container bg_color="red" display="flex" direction="row" justify="between" padding="0" shadow="md">
-                <div className="text-xl m-2 flex justify-center items-center w-full">
+                <div className="text-xl m-1 flex justify-center items-center w-full">
                     <div>
                         Photos
                     </div>
                 </div>
                 <div className="flex flex-row border-l-2 border-l-gray-200 hover:border-l-gray-300 justify-center">
-                    <img src="/icons/rtriangle.svg" alt="Show more" className="min-w-[30px] m-2" />
+                    <img src="/icons/rtriangle.svg" alt="Show more" className="min-w-[30px] m-1" />
                 </div>
             </Container>
         </Container>
@@ -125,36 +125,54 @@ const Event = ({event}) => {
 
 const TimelineRow = ({events}) => {
     return (
-        <div className="w-full flex flex-col">
-            <div className="w-full flex flex-row gap-4">
-                {events.map((e) => {
-                    return <Event event={e} key={e.id} />
-                })}
+        <>
+            <Divider size="10"/>
+            <div className="w-full flex flex-col">
+                <div className="w-full flex flex-row gap-4">
+                    {events.map((e) => {
+                        return <Event event={e} key={e.id} />
+                    })}
+                </div>
+                <div className="w-full flex flex-row">
+                    {events.map((e) => {
+                        return (
+                            <div className="w-full grid justify-items-center align-middle">
+                                <img src="/icons/varrow.svg" className=""/>
+                            </div>
+                        )
+                    })}
+                </div>
+                <img src="/icons/barrow.svg" className="w-full scale-y-150"/>
             </div>
-            <div className="w-full flex flex-row">
-                {events.map((e) => {
-                    return (
-                        <div className="w-full grid justify-items-center align-middle">
-                            <img src="/icons/varrow.svg" className=""/>
-                        </div>
-                    )
-                })}
-            </div>
-            <img src="/icons/barrow.svg" className="w-full scale-y-150"/>
-        </div>
+        </>
     )
 }
 
 const Timeline = () => {
     const [events, set_events] = useState([{"id":2, "date":"Loading...", "title":"Loading...", "rationale":"Loading...", "outcome":"Loading..."}]);
+    const [rows, set_rows] = useState([[]])
 
     useLocalText({section: 'sjp_on_campus', setter: set_events});
+
+    useEffect(() => {
+        let rows_temp = []
+        const max_per_row = 4
+        for (let i = 0; i < Math.ceil(events.length / max_per_row); i++) {
+            let end_slice = (i + 1) * max_per_row
+            rows_temp.push(events.slice(
+                i * max_per_row,
+                end_slice > events.length ? events.length : end_slice
+            ))
+        }
+        set_rows(rows_temp)
+    }, [events])
 
     return (
         <Container display_bg_hover="false">
             <Sort />
-            <Divider />
-            <TimelineRow events={events} />
+            {rows.map((row_of_events, idx) => {
+                return <TimelineRow key={idx} events={row_of_events} />
+            })}
         </Container>
     )
 };

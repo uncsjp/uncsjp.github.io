@@ -28,10 +28,10 @@ const Newsletters = () => {
           	rounded-lg
           	flex justify-center
 			w-[50%]
-        "
+            "
             >
                 <iframe
-                    className="rounded-lg border border-black"
+                    className="rounded-lg border-red-300 border-solid border-5 shadow-md"
                     src="https://us17.campaign-archive.com/home/?u=73a81bd71c0831f152215407f&id=f8de748d7d"
                     title="newsletters"
                     height="800px"

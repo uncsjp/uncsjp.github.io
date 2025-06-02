@@ -12,7 +12,7 @@ export default function useLocalText({section, setter}) {
                 // Set content
                 setter(jsx)
             })
-            .catch((e) => console.error(e))
+            .catch((DOMException) => console.log("fetch aborted."))
         return () => { controller.abort(); }
     }, [section, setter])
 }

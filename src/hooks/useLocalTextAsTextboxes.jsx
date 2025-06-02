@@ -3,7 +3,10 @@ import TextBox from '../utilities/TextBox'
 
 export default function useLocalTextAsTextboxes({ section, setter }) {
     useEffect(() => {
-        fetch('text/text.json')
+        const controller = new AbortController();
+        const signal = controller.signal;
+
+        fetch('text/text.json', { signal })
             .then((response) => response.json()) // Convert body to json
             .then((response) => response[section]) // Pull out principles_and_goals
             .then((section) => {
@@ -23,9 +26,8 @@ export default function useLocalTextAsTextboxes({ section, setter }) {
             .then((jsx) => {
                 // Set content
                 setter(jsx)
-                console.log(jsx)
             })
-            .catch((e) => console.error(e))
-        return () => {}
+            .catch((DOMException) => console.log("fetch aborted."))
+        return () => { controller.abort() }
     }, [section, setter])
 }
