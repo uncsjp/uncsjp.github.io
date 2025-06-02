@@ -56,7 +56,7 @@ const Event = ({event}) => {
                 </div>
                 <div className="flex flex-row border-l-2 border-l-gray-200 hover:border-l-gray-300">
                     <div className="text-xl inline m-1">
-                        {event.date}
+                        {`${event.date.month.slice(0,4)} ${event.date.year}`}
                     </div>
                 </div>
             </Container>
@@ -138,7 +138,7 @@ const TimelineRow = ({events}) => {
 }
 
 const Timeline = () => {
-    const [events, set_events] = useState([{"id":2, "date":"Loading...", "title":"Loading...", "rationale":"Loading...", "outcome":"Loading..."}]);
+    const [events, set_events] = useState([{"id":2, "date":{"month": "", "year": "loading"}, "title":"Loading...", "rationale":"Loading...", "outcome":"Loading..."}]);
     const [filtered_events, set_filtered_events] = useState(events)
     const [rows, set_rows] = useState([[]])
 
@@ -151,7 +151,7 @@ const Timeline = () => {
     useEffect(() => {
         set_filtered_events(
             events.filter((e) => {return e.title.toLowerCase().includes(title_filter.toLowerCase()) || title_filter === ""})
-            .filter((e) => {return e.date.toLowerCase().includes(date_filter.toLowerCase()) || date_filter === ""})
+            .filter((e) => {return `${e.date.month} ${e.date.year}`.toLowerCase().includes(date_filter.toLowerCase()) || date_filter === ""})
         )
     }, [title_filter, date_filter, events])
 
