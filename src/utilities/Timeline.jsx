@@ -9,10 +9,29 @@ import sort_by_younger_date from "./functions/sort_by_younger_date";
 
 const ExtendedDescription = ({text}) => {
     return (
-        <div className="absolute left-0 top-full max-h-64 min-w-full p-1 bg-gray-300
+        <div className="absolute left-0 top-full p-1 bg-gray-300
             rounded-tl-xl rounded-bl-xl rounded-br-xl border-red-400 border-solid border-5
-            text-base overflow-auto z-10">
+            text-base overflow-auto resize z-10">
             {text}
+        </div>
+    )
+}
+
+const PhotoAlbum = ({photos}) => {
+    return (
+        <div className="absolute left-0 top-full p-1 bg-gray-300
+            rounded-tl-xl rounded-bl-xl rounded-br-xl border-red-400 border-solid border-5
+            text-base overflow-y-auto overflow-x-clip resize z-10">
+                {photos.map(photo => {
+                    return (
+                        <Container bg_color="red" display="flex" direction="row" margin="half">
+                            <img src={photo.url} className="w-[60%] rounded-sm m-0.5"/>
+                            <div className="text-sm">
+                                {photo.description}
+                            </div>
+                        </Container>
+                    )
+                })}
         </div>
     )
 }
@@ -22,9 +41,12 @@ const Event = ({event}) => {
     const [outcome_clicked, set_outcome_clicked] = useState(false)
     const [rationale_hovered, set_rationale_hovered] = useState(false)
     const [outcome_hovered, set_outcome_hovered] = useState(false)
+    const [photo_gallery_clicked, set_photo_gallery_clicked] = useState(false)
+    const [photo_gallery_hovered, set_photo_gallery_hovered] = useState(false)
 
     const rationale_ref = useRef(null)
     const outcome_ref = useRef(null)
+    const photo_gallery_ref = useRef(null)
 
     useEffect(() => {
         const click_outside_rationale = (event) => {
@@ -39,11 +61,19 @@ const Event = ({event}) => {
             }
         }
 
+        const click_outside_photo_gallery = (event) => {
+            if (photo_gallery_ref && !photo_gallery_ref.current.contains(event.target)) {
+                set_photo_gallery_clicked(false)
+            }
+        }
+
         document.addEventListener('mousedown', click_outside_rationale)
         document.addEventListener('mousedown', click_outside_outcome)
+        document.addEventListener('mousedown', click_outside_photo_gallery)
         return () => {
             document.removeEventListener('mousedown', click_outside_rationale)
             document.removeEventListener('mousedown', click_outside_outcome)
+            document.removeEventListener('mousedown', click_outside_photo_gallery)
         }
     }, [])
 
@@ -69,14 +99,15 @@ const Event = ({event}) => {
                         {event.rationale}
                     </div>
                     <div className="flex flex-row border-l-2 border-l-gray-200 hover:border-l-gray-300 justify-center"
-                        ref={rationale_ref}
                         onClick={() => set_rationale_clicked(true)}
                         onMouseEnter={() => set_rationale_hovered(true)}
                         onMouseLeave={() => set_rationale_hovered(false)}
                     >
                         <img src="/icons/rtriangle.svg" alt="Show more" className="min-w-[30px] m-1"/>
                     </div>
-                    {(rationale_clicked || rationale_hovered) && <ExtendedDescription text={event.rationale}/>}
+                    <div ref={rationale_ref} className="contents">
+                        {(rationale_clicked || rationale_hovered) && <ExtendedDescription text={event.rationale}/>}
+                    </div>
                 </Container>
             </div>
 
@@ -87,28 +118,38 @@ const Event = ({event}) => {
                         {event.outcome}
                     </div>
                     <div className="flex flex-row border-l-2 border-l-gray-200 hover:border-l-gray-300 justify-center"
-                        ref={outcome_ref}
                         onClick={() => set_outcome_clicked(true)}
                         onMouseEnter={() => set_outcome_hovered(true)}
                         onMouseLeave={() => set_outcome_hovered(false)}
                     >
                         <img src="/icons/rtriangle.svg" alt="Show more" className="min-w-[30px] m-1" />
                     </div>
-                    {(outcome_clicked || outcome_hovered) && <ExtendedDescription text={event.outcome} />}
+                    <div ref={outcome_ref} className="contents">
+                        {(outcome_clicked || outcome_hovered) && <ExtendedDescription text={event.outcome} />}
+                    </div>
                 </Container>
             </div>
 
             {/* gallery */}
-            <Container bg_color="red" display="flex" direction="row" justify="between" padding="0" shadow="md">
-                <div className="text-xl m-1 flex justify-center items-center w-full">
-                    <div>
-                        Photos
+            <div className="relative">
+                <Container bg_color="red" display="flex" direction="row" justify="between" padding="0" shadow="md">
+                    <div className="text-xl m-1 flex justify-center items-center w-full">
+                        <div>
+                            Photos
+                        </div>
                     </div>
-                </div>
-                <div className="flex flex-row border-l-2 border-l-gray-200 hover:border-l-gray-300 justify-center">
-                    <img src="/icons/rtriangle.svg" alt="Show more" className="min-w-[30px] m-1" />
-                </div>
-            </Container>
+                    <div className="flex flex-row border-l-2 border-l-gray-200 hover:border-l-gray-300 justify-center"
+                        onClick={() => set_photo_gallery_clicked(true)}
+                        onMouseEnter={() => set_photo_gallery_hovered(true)}
+                        onMouseLeave={() => set_photo_gallery_hovered(false)}
+                    >
+                        <img src="/icons/rtriangle.svg" alt="Show more" className="min-w-[30px] m-1" />
+                    </div>
+                    <div ref={photo_gallery_ref} className="contents">
+                        {(photo_gallery_clicked || photo_gallery_hovered) && <PhotoAlbum photos={event.photos} />}
+                    </div>
+                </Container>
+            </div>
         </Container>
     );
 };

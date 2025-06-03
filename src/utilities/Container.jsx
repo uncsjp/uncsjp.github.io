@@ -15,7 +15,8 @@ const Container = ({children,
 
     const margin_variants = {
         mb0: "mb-0",
-        m1: "m-1"
+        m1: "m-1",
+        half: "m-0.5"
     }
 
     const padding_variants = {
@@ -45,7 +46,7 @@ const Container = ({children,
         none: ""
     }
 
-    const direction_variants = {
+    const display_variants = {
         block: "block",
         flex: "flex",
         inline: "inline"
@@ -87,7 +88,7 @@ const Container = ({children,
                 ${bg_color_variants[display_bg_hover][bg_color]}
                 ${border_variants[border_color]}
                 ${shadow_variants[shadow]}
-                ${direction_variants[display]}
+                ${display_variants[display]}
                 ${flex_direction_variants[direction]}
                 ${justify_variants[justify]}
                 ${margin_variants[margin]}
