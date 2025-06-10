@@ -226,8 +226,8 @@ const Timeline = () => {
         <Container display_bg_hover="false" overflow="auto">
             <Container display="flex">
                 <Container border_color="gray" shadow="md" display="inline" width="auto">Sort by...</Container>
-                <button className={`${button_bg[newest_first]} rounded-lg m-1 p-1 border-red-300 border-solid border-5`} onClick={() => {set_newest_first(true)}}>Youngest</button>
-                <button className={`${button_bg[!newest_first]} rounded-lg m-1 p-1 border-red-300 border-solid border-5`} onClick={() => {set_newest_first(false)}}>Oldest</button>
+                <button className={`${button_bg[newest_first]} rounded-lg m-1 p-1 border-red-300 border-solid border-5`} onClick={() => {set_newest_first(true)}}>Oldest</button>
+                <button className={`${button_bg[!newest_first]} rounded-lg m-1 p-1 border-red-300 border-solid border-5`} onClick={() => {set_newest_first(false)}}>Most recent</button>
                 <Container border_color="gray" shadow="md" display="inline" width="auto">Filter by date...</Container>
                 <FilterInput placeholder="Events with date..." setter={set_date_filter} />
                 <Container border_color="gray" shadow="md" display="inline" width="auto">Filter by title...</Container>

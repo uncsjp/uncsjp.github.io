@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import AboutUs from './pages/AboutUs'
-import PrinciplesAndGoals from './pages/PrinciplesAndGoals'
+import PointsOfUnity from './pages/PointsOfUnity'
 import SjpOnCampus from './pages/SjpOnCampus'
 import Newsletters from './pages/Newsletters'
 import JoinTheOrg from './pages/JoinTheOrg'
@@ -21,8 +21,8 @@ root.render(
                 <Route path="/" element={<App />}>
                     <Route path="about_us" element={<AboutUs />} />
                     <Route
-                        path="principles_and_goals"
-                        element={<PrinciplesAndGoals />}
+                        path="points_of_unity"
+                        element={<PointsOfUnity />}
                     />
                     <Route path="sjp_on_campus" element={<SjpOnCampus />} />
                     <Route path="newsletters" element={<Newsletters />} />

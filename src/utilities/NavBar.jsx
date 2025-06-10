@@ -16,10 +16,7 @@ const NavBar = () => {
                 alt="sjp logo with white background"
             />
             <NavBarText text={'About Us'} route={'/about_us'} />
-            <NavBarText
-                text={'Principles and Goals'}
-                route={'principles_and_goals'}
-            />
+            <NavBarText text={'Points of Unity'} route={'points_of_unity'}/>
             <NavBarText text={'SJP on Campus'} route={'sjp_on_campus'} />
             <NavBarText text={'Newsletters'} route={'newsletters'} />
             <NavBarText text={'Join the Org'} route={'join_the_org'} />

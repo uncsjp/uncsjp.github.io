@@ -131,7 +131,7 @@ triangle_orgs_init.sort((a, b) => { return a.name < b.name ? -1 : a.name > b.nam
 
 const OrgCard = ({org}) => {
     return (
-        <Container bg_color={"red"}>
+        <Container bg_color={"red"} shadow="md">
             <div className="flex flex-row shrink-0 justify-between">
 
                 <div className="flex flex-row">
@@ -183,7 +183,7 @@ const PaginatedItems = ({ items_per_page }) => {
 
     return (
         <>
-            <Container bg_color={"red"}>
+            <Container bg_color={"red"} shadow="md">
                 <ReactPaginate
                     breakLabel="..."
                     nextLabel=">"
