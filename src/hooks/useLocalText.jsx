@@ -7,7 +7,7 @@ export default function useLocalText({section, setter}) {
 
         fetch('text/text.json', {signal}) // Stop any ongoing requests on refresh / navigate away
             .then((response) => response.json()) // Convert body to json
-            .then((response) => response[section]) // Pull out principles_and_goals
+            .then((response) => response[section]) // Pull out section
             .then((jsx) => {
                 // Set content
                 setter(jsx)

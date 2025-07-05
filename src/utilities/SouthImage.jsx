@@ -4,10 +4,11 @@ const SouthImage = () => {
     return (
         <div
             className="
+        p-1
         grid grid-cols-5 gap-2
         text-2xl text-center font-bold
-        mt-2 mb-2 ml-1 mr-1
-        rounded-lg bg-cover bg-center h-64 w-[99%]"
+        rounded-lg bg-cover bg-center h-64 w-[99%]
+        shadow-md"
             style={{
                 backgroundImage: `url(${southImage})`,
                 gridTemplateRows: 'repeat(7, 1fr)',

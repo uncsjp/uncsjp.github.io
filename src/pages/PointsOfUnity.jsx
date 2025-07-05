@@ -1,9 +1,9 @@
 import Image from '../utilities/Image'
 import TextBox from '../utilities/TextBox'
 import useLocalTextAsTextboxes from '../hooks/useLocalTextAsTextboxes'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-const PrinciplesAndGoals = () => {
+const PointsOfUnity = () => {
     const [text_boxes, set_text] = useState(
         <TextBox
             text={'Loading...'}
@@ -12,7 +12,8 @@ const PrinciplesAndGoals = () => {
         />
     )
 
-    useLocalTextAsTextboxes({ section: 'principles_and_goals', setter: set_text })
+    useLocalTextAsTextboxes({ section: '--Points of Unity--', setter: set_text })
+    useEffect(() => {}, [text_boxes])
 
     return (
         <div
@@ -39,4 +40,4 @@ const PrinciplesAndGoals = () => {
     )
 }
 
-export default PrinciplesAndGoals
+export default PointsOfUnity

@@ -188,7 +188,7 @@ const Timeline = () => {
     const [date_filter, set_date_filter] = useState("")
     const [newest_first, set_newest_first] = useState(true)
 
-    useLocalText({section: 'sjp_on_campus', setter: set_events});
+    useLocalText({section: '--SJP On Campus--', setter: set_events});
 
     // Applies filter when events changes or filters changed
     useEffect(() => {

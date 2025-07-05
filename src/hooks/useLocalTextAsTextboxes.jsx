@@ -8,7 +8,7 @@ export default function useLocalTextAsTextboxes({ section, setter }) {
 
         fetch('text/text.json', { signal })
             .then((response) => response.json()) // Convert body to json
-            .then((response) => response[section]) // Pull out principles_and_goals
+            .then((response) => response[section]) // Pull out section
             .then((section) => {
                 // Reformat json as textboxes
                 let o = []
