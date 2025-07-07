@@ -38,5 +38,7 @@ jobs:
         needs: publish
         steps:
             - name: Deploy to GitHub Pages
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               id: deployment
               uses: actions/deploy-pages@v4
