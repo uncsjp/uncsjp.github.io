@@ -15,6 +15,9 @@ jobs:
               with:
                   node-version: '20' # Puppeteer works best with LTS versions
 
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
             - name: Install dependencies (with Puppeteer)
               run: |
                   npm install puppeteer
@@ -29,9 +32,6 @@ jobs:
                   export DISPLAY=:99
                   Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
                   node scripts/fetchSiteText.mjs
-
-            - name: Checkout repository
-              uses: actions/checkout@v4
 
             - name: Commit and push changes
               env:
