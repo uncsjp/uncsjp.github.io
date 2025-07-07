@@ -10,11 +10,6 @@ jobs:
         runs-on: ubuntu-latest # Linux is best for headless Chrome
 
         steps:
-            - name: Checkout repository
-              uses: actions/checkout@v4
-              with:
-                  fetch-depth: 0
-
             - name: Set up Node.js
               uses: actions/setup-node@v4
               with:
@@ -29,17 +24,21 @@ jobs:
 
             - name: Run Puppeteer script
               env:
-                  TEXT_URL: ${{ secrets.TEXT_URL }} # Pass secrets if needed
+                  TEXT_URL: ${{ secrets.TEXT_URL }} # Text url for script
               run: |
                   export DISPLAY=:99
                   Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
                   node scripts/fetchSiteText.mjs
 
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
             - name: Commit and push changes
-              if: github.ref == 'refs/heads/main'
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: |
                   git config --global user.name "GitHub Actions"
-                  git config --global user.email "actions@github.com"
+                  git config --global user.email "github-actions[bot]@users.noreply.github.com"
                   git add .
-                  git diff --quiet || git commit -m "Auto-update from Puppeteer script"
+                  git commit -m "Auto-update from Puppeteer script"
                   git push

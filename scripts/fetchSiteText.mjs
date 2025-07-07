@@ -199,7 +199,8 @@ const crytpad_to_obj = async () => {
         const get_text_from_array = (elt, val) => {
             r_arr = []
             const regexp = new RegExp(`<li>${val}:.*?<`, 'g')
-            elt.matchAll(regexp).forEach((inst) => {
+            let interm = [...elt.matchAll(regexp)]
+            interm.forEach((inst) => {
                 r_arr.push(inst[0].slice(6 + val.length, -1))
             })
             return r_arr
