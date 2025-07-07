@@ -35,7 +35,7 @@ jobs:
                   Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
                   node scripts/fetchSiteText.mjs
 
-            - name: Commit and push changes (if needed)
+            - name: Commit and push changes
               if: github.ref == 'refs/heads/main'
               run: |
                   git config --global user.name "GitHub Actions"

@@ -63,9 +63,10 @@ const crytpad_to_obj = async () => {
         )
 
         // Add br, p to list of removals
-        text.matchAll(new RegExp('(<br>)|(<\/?p>)|(&nbsp;)', 'g')).forEach(
-            (inst) => to_remove.push(inst[0])
-        )
+        let to_add = [
+            ...text.matchAll(new RegExp('(<br>)|(<\/?p>)|(&nbsp;)', 'g')),
+        ]
+        to_add.forEach((inst) => to_remove.push(inst[0]))
 
         // Remove strings from text
         to_remove.map((unremoved) => {
