@@ -29,7 +29,7 @@ jobs:
 
             - name: Run Puppeteer script
               env:
-                  SECRET_URL: ${{ secrets.TEXT_URL }} # Pass secrets if needed
+                  TEXT_URL: ${{ secrets.TEXT_URL }} # Pass secrets if needed
               run: |
                   export DISPLAY=:99
                   Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
