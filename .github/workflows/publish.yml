@@ -21,7 +21,7 @@ jobs:
               id: build
               run: |
                   npm install vite
-                  vite build
+                  npm run build
 
             # https://github.com/actions/upload-pages-artifact
             - name: Upload static files as artifact
