@@ -6,7 +6,7 @@ on:
     workflow_dispatch: # Allow manual triggers
 
 jobs:
-    run-puppeteer:
+    fetch-text:
         runs-on: ubuntu-latest # Linux is best for headless Chrome
 
         steps:
