@@ -168,12 +168,12 @@ const TimelineRow = ({events}) => {
                     {events.map((e) => {
                         return (
                             <div className="w-full grid justify-items-center align-middle">
-                                <img src="/icons/varrow.svg" className=""/>
+                                <img src="icons/varrow.svg" className=""/>
                             </div>
                         )
                     })}
                 </div>
-                <img src="/icons/barrow.svg" className="w-full scale-y-150"/>
+                <img src="icons/barrow.svg" className="w-full scale-y-150"/>
             </div>
         </>
     )
