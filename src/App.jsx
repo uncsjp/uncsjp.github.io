@@ -2,6 +2,7 @@ import NavBar from './utilities/NavBar'
 import './App.css'
 
 import { Outlet } from 'react-router-dom'
+import AboutUs from './pages/AboutUs'
 
 function App() {
     return (

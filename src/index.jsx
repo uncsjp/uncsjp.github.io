@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import AboutUs from './pages/AboutUs'
 import PointsOfUnity from './pages/PointsOfUnity'
@@ -19,9 +19,10 @@ root.render(
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<App />}>
-                    <Route path="about_us" element={<AboutUs />} />
+                    <Route index element={<Navigate to="/about_us" replace />} />
+                    <Route path="/about_us" element={<AboutUs />} />
                     <Route
-                        path="points_of_unity"
+                        path="/points_of_unity"
                         element={<PointsOfUnity />}
                     />
                     <Route path="sjp_on_campus" element={<SjpOnCampus />} />

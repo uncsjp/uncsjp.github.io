@@ -1,7 +1,7 @@
 import useLocalTextAsTextboxes from '../hooks/useLocalTextAsTextboxes'
 import SouthImage from '../utilities/SouthImage'
 import TextBoxt from '../utilities/TextBox'
-import { useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 
 const AboutUs = () => {
     const [text_boxes, set_text] = useState([<></>])
