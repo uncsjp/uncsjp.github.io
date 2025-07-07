@@ -286,7 +286,10 @@ const crytpad_to_obj = async () => {
     // Main Script //
     color_print('Beginning run...')
 
-    const browser = await puppeteer.launch({ slowMo: 500 })
+    const browser = await puppeteer.launch({
+        slowMo: 500,
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    })
     const page = await browser.newPage()
 
     color_print('Browser opened, navigating to page...')
