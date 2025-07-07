@@ -182,7 +182,8 @@ const crytpad_to_obj = async () => {
                     is_first = false
                 }
                 const regexp = new RegExp(`<li>${key}:.*?<`, 'g')
-                elt.matchAll(regexp).forEach((inst, idx) => {
+                let interm = [...elt.matchAll(regexp)]
+                interm.forEach((inst, idx) => {
                     if (is_first) {
                         var new_obj = {}
                         new_obj[key] = inst[0].slice(6 + key.length, -1)
