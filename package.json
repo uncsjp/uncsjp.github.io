@@ -23,7 +23,7 @@
         "preview": "vite preview",
         "lint": "npx eslint .",
         "pretty": "prettier . --wriie",
-        "fetch-site-content": "node scripts/fetchSiteText.mjs"
+        "fetch-site-text": "node scripts/fetchSiteText.mjs"
     },
     "eslintConfig": {
         "extends": [

@@ -1,0 +1,41 @@
+name: Fetch Site Text Runner
+
+on:
+    schedule:
+        # Runs at 00:00 UTC every day
+        - cron: '0 0 * * *'
+    # Allow manually triggering the workflow
+    workflow_dispatch:
+
+jobs:
+    run-script:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                  # Needed if your script will push changes back
+                  fetch-depth: 0
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '20'
+
+            - name: Install dependencies
+              run: npm install # or yarn install if you use yarn
+
+            - name: Run your script
+              env:
+                  TEXT_URL: ${{ secrets.TEXT_URL }}
+              run: node scripts/fetchSiteText.mjs # replace with your script path
+
+            - name: Commit and push changes
+              if: github.ref == 'refs/heads/main' # or 'master' or your branch name
+              run: |
+                  git config --global user.name "GitHub Actions"
+                  git config --global user.email "actions@github.com"
+                  git add .
+                  git diff --quiet && git diff --staged --quiet || git commit -m "Auto-commit changes from daily script"
+                  git push
