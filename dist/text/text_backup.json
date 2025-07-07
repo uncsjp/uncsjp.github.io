@@ -1,0 +1,242 @@
+{
+    "about_us": [],
+    "principles_and_goals": [
+        {
+            "id": 0,
+            "header": "We affirm the right of Palestinians to resist, the right of Palestinian self-determination in Palestine, Al-Quds (Jerusalem) as the capital of Palestine, and the right of return for all Palestinian refugees.",
+            "text": ""
+        },
+        {
+            "id": 1,
+            "header": "We are anti-Zionist.",
+            "text": "Zionism is a racist ideology that calls for the establishment of a Western settler colony in Palestine that privileges Jews at the expense of indigenous Palestinians, through mass ethnic cleansing and apartheid. We do not accept the legitimacy of Zionist ideology and will not make compromises to spare the feelings of Zionists. We completely reject the contention that Zionism is part of Jewish cultural or religious identity, and refuse to indulge the notion that anti-Zionism poses a threat to Jewish people."
+        },
+        {
+            "id": 2,
+            "header": "We are anti-capitalist and anti-imperialist.",
+            "text": "We support the abolition of the imperial capitalist entity whose heart lies in amerikkka. Imperialism is the highest stage of capitalism. It entails a powerful hegemon viciously exploiting less powerful countries for their resources. We understand that the US is at the head of the most powerful empire in the world, and that the State of Israel is its foothold in the SWANA region. We reject the myth that Israel controls the US government to the detriment of Americans; in reality, Israel is an American client state and its existence benefits Americans as much as any other part of the empire does."
+        },
+        {
+            "id": 3,
+            "header": "We are anti-racist and reject all forms of bigotry.",
+            "text": "Racism is pervasive, embedded in systems of power, and upholds all forms of oppression. To be anti-racist, we commit to actively identifying, challenging, and dismantling racism and oppression in ourselves, our community, and institutions. This includes: Educating ourselves on systemic racism, implicit bias, and historical roots of oppression; Centering and amplifying the voices of the most marginalized in our community, and; Interrupting harmful behaviors and inequitable structures - both internal and external to the organization - even when uncomfortable. Anti-racism requires ongoing action. When we fall short, we commit to accountability through repair, transparency, and continuous growth."
+        },
+        {
+            "id": 4,
+            "header": "We affirm that none of us are free until all of us are free.",
+            "text": ""
+        }
+    ],
+    "sjp_on_campus": [
+        {
+            "id":0,
+            "date": {
+                "day": "1",
+                "month": "May",
+                "year": "2025"
+            },
+            "title": "event 1",
+            "rationale": "ipsum lorem dolum emet",
+            "outcome": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "photos": [
+                {
+                    "url": "/peoples_grad.jpg",
+                    "description": "photo 1"
+                },
+                {
+                    "url": "/protest_from_south.jpg",
+                    "description": "photo 2"
+                }
+            ]
+        },
+        {
+            "id":1,
+            "date": {
+                "day": "1",
+                "month": "September",
+                "year": "2025"
+            },
+            "title": "event 2",
+            "rationale": "ipsum lorem dolum emet",
+            "outcome": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "photos": [
+                {
+                    "url": "/peoples_grad.jpg",
+                    "description": "photo 1"
+                },
+                {
+                    "url": "/protest_from_south.jpg",
+                    "description": "photo 2"
+                }
+            ]
+        },
+        {
+            "id":2,
+            "date": {
+                "day": "1",
+                "month": "May",
+                "year": "2023"
+            },
+            "title": "event 3",
+            "rationale": "ipsum lorem dolum emet",
+            "outcome": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "photos": [
+                {
+                    "url": "/peoples_grad.jpg",
+                    "description": "photo 1"
+                },
+                {
+                    "url": "/protest_from_south.jpg",
+                    "description": "photo 2"
+                }
+            ]
+        },
+        {
+            "id":3,
+            "date": {
+                "day": "1",
+                "month": "May",
+                "year": "2024"
+            },
+            "title": "event 4",
+            "rationale": "ipsum lorem dolum emet",
+            "outcome": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "photos": [
+                {
+                    "url": "/peoples_grad.jpg",
+                    "description": "photo 1"
+                },
+                {
+                    "url": "/protest_from_south.jpg",
+                    "description": "photo 2"
+                }
+            ]
+        },
+        {
+            "id":4,
+            "date": {
+                "day": "1",
+                "month": "March",
+                "year": "2024"
+            },
+            "title": "event 5",
+            "rationale": "ipsum lorem dolum emet",
+            "outcome": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "photos": [
+                {
+                    "url": "/peoples_grad.jpg",
+                    "description": "photo 1"
+                },
+                {
+                    "url": "/protest_from_south.jpg",
+                    "description": "photo 2"
+                }
+            ]
+        },
+        {
+            "id":5,
+            "date": {
+                "day": "1",
+                "month": "February",
+                "year": "2025"
+            },
+            "title": "event 6",
+            "rationale": "ipsum lorem dolum emet",
+            "outcome": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "photos": [
+                {
+                    "url": "/peoples_grad.jpg",
+                    "description": "photo 1"
+                },
+                {
+                    "url": "/protest_from_south.jpg",
+                    "description": "photo 2"
+                }
+            ]
+        },
+        {
+            "id":6,
+            "date": {
+                "day": "1",
+                "month": "May",
+                "year": "2026"
+            },
+            "title": "event 7",
+            "rationale": "ipsum lorem dolum emet",
+            "outcome": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "photos": [
+                {
+                    "url": "/peoples_grad.jpg",
+                    "description": "photo 1"
+                },
+                {
+                    "url": "/protest_from_south.jpg",
+                    "description": "photo 2"
+                }
+            ]
+        },
+        {
+            "id":7,
+            "date": {
+                "day": "1",
+                "month": "May",
+                "year": "2021"
+            },
+            "title": "event 8",
+            "rationale": "ipsum lorem dolum emet",
+            "outcome": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "photos": [
+                {
+                    "url": "/peoples_grad.jpg",
+                    "description": "photo 1"
+                },
+                {
+                    "url": "/protest_from_south.jpg",
+                    "description": "photo 2"
+                }
+            ]
+        },
+        {
+            "id":8,
+            "date": {
+                "day": "1",
+                "month": "January",
+                "year": "2022"
+            },
+            "title": "event 9",
+            "rationale": "ipsum lorem dolum emet",
+            "outcome": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "photos": [
+                {
+                    "url": "/peoples_grad.jpg",
+                    "description": "photo 1"
+                },
+                {
+                    "url": "/protest_from_south.jpg",
+                    "description": "photo 2"
+                }
+            ]
+        },
+        {
+            "id":9,
+            "date": {
+                "day": "1",
+                "month": "June",
+                "year": "2024"
+            },
+            "title": "event 10",
+            "rationale": "ipsum lorem dolum emet",
+            "outcome": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "photos": [
+                {
+                    "url": "/peoples_grad.jpg",
+                    "description": "photo 1"
+                },
+                {
+                    "url": "/protest_from_south.jpg",
+                    "description": "photo 2"
+                }
+            ]
+        }
+    ]
+}
