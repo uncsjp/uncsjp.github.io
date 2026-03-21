@@ -1,22 +1,22 @@
 import Image from "next/image";
-import { Container, Group, Text } from "@mantine/core";
+import { Group, Title } from "@mantine/core";
 
 export function HeaderSimple() {
   return (
     <header>
       <Group justify="center">
-        <Text size="xl" fw={600}>
+        <Title order={1}>
           UNC
-        </Text>
+        </Title>
         <Image
           src="/logo-nobg-circle.png"
-          alt="UNCSJP Logo."
+          alt="UNCSJP's Logo"
           width={80}
           height={80}
         />
-        <Text size="xl" fw={600}>
+        <Title order={1}>
           SJP
-        </Text>
+        </Title>
       </Group>
     </header>
   );
